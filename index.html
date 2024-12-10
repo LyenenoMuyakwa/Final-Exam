@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="both">
+        <header>Weather App</header>
+        <div class="search-container">
+            <input type="text" id="city-input" placeholder="Search city">
+            <button id="search-btn"><img src="Images/illustrations/icons/search icon light.jpg" alt=""></button>
+            <p id="error-message"></p>
+        </div>
+        <div class="main">
+            <div id="current">
+                <img src="Images/illustrations/globe.svg" alt="Rotating Image" class="rotate">
+                <p id="day">Today</p>
+                <p id="location">Location</p>
+                <div id="time">
+                    <p id="current-time">00:00:00</p>
+                </div>
+            </div>
+            <div class="weather-container">
+                <div class="weather-info">
+                    <img id="weather-icon" alt="" src="Images/illustrations/Eclipse.jpg">
+                    <h2 id="description">Clear Sky</h2>
+                    <h2 id="temperature">0<sup>o</sup>C</h2>
+                    <h2 id="humidity">Humidity: 0%</h2>
+                    <h2 id="wind-speed">Wind speed: 0m/s</h2>
+                </div>
+            </div>
+
+
+            <div class="calendar">
+                <div class="calendar-header">
+                    <button class="calender-button" id="prev-month">&lt;</button>
+                    <h2 id="month-year"></h2>
+                    <button class="calender-button" id="next-month">&gt;</button>
+                </div>
+                <table id="calendar-body">
+                    <thead>
+                        <tr>
+                            <th>Sun</th>
+                            <th>Mon</th>
+                            <th>Tue</th>
+                            <th>Wed</th>
+                            <th>Thu</th>
+                            <th>Fri</th>
+                            <th>Sat</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+
+
+
+            <div class="content">
+                <ul>
+                    <li><a href="index.html"><img src="Images/illustrations/top.jpg" alt=""></a>Back to top</li>
+                    <li><a href="hours.html"><img src="Images/illustrations/icons/next.jpeg" alt=""></a>Next Hours</li>
+                    <li><a href="https://en.wikipedia.org/wiki/Africa"><img
+                                src="Images/illustrations/icons/wise logo light.png" alt=""></a>Africa</li>
+
+                    <li>
+                        <a href="#" id="dropdownButton">
+                            <img src="Images/illustrations/more 2.jpg" alt="">
+                        </a>More...
+                        <div class="dropdown-content" id="myDropdown">
+                            <a href="hours.html">Next 12 hours</a>
+                            <a href="#forecast">Next 5 days</a>
+                            <a href="#links">Quick links</a>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="next-hours">
+        <h2> Weather Forecast for the Next 5 Hours</h2>
+        <div id="weather"></div>
+    </div>
+
+    <div id="forecast" class="forecast">
+        <h2>5-Day Forecast</h2>
+        <div id="forecast-container"></div>
+    </div>
+
+    <div id="about-us">
+        <div class="about">
+            <h4>About Us</h4>
+
+            <p>Welcome to Muyakwa Websites, where passion meets precision. We're a team of dedicated
+                professionals
+                with
+                a mission to satisfy your needs.
+            </p>
+        </div>
+        <div class="about">
+            <h4>Contacts</h4>
+
+            <p>
+                muyakwa lyeneno
+                @outlook. com.<br>
+                bravinho muyakwa
+                680 @gmail .com.<br>
+                0971948969<br>
+                0768254186<br>
+                0957418300
+            </p>
+        </div>
+
+        <div class="about">
+            <h4>Our Values</h4>
+
+            <p>Driven by principles of integrity, innovation, sustainability. Every step we take is a testament to our
+                dedication to specific goal or
+                objective.
+            </p>
+        </div>
+        <div class="about">
+            <h4>Join Us</h4>
+
+            <p>We invite you to explore our website and discover more about what we offer. Got questions? Reach out
+                to
+                us—we'd love to connect!</p>
+        </div>
+    </div>
+
+
+    <div class="follow-us">
+        <h2>FOLLOW US ON</h2>
+        <div class="follow">
+            <li><a href="https://chat.whatsapp.com/BktXWED2tgN3rIkfj71PdT"><img
+                        src="Images/illustrations/icons/whatsapp logo.png" alt=""></a>
+            </li>
+            <li><a href="http://www.facebook.com"><img src="Images/illustrations/icons/facebook logo.png" alt=""></a>
+            </li>
+            <li><a href="http://www.instagram.com"><img src="Images/illustrations/icons/instagram logo.png" alt=""></a>
+            </li>
+            <li><a href="http://www.twitter.com"><img src="Images/illustrations/icons/Twitter Logo.png" alt=""></a></li>
+            <li><a href="http://www.youtube.com"><img src="Images/illustrations/icons/youtube logo.png" alt=""></a></li>
+            <li><a href="https://t.me/+Vma2LBp2f-FhOWE0"><img src="Images/illustrations/icons/telegram logo.png"
+                        alt=""></a></li>
+        </div>
+    </div>
+
+    <div class="terms">
+        <a href="terms.html">Terms</a> and <a href="policies.html">Policies</a>
+    </div>
+
+    <footer>
+        <div id="links" class="links">
+            <div class="link">
+                <li><a href="http://www.icuzambia.net">ICU</a></li>
+                <li><a href="https://www.zrdc.org">ZRDC</a></li>
+            </div>
+        </div>
+        <td align="middle"><span class="copyright">Namulilo Ward. All Rights Reserved. Designed and Maintained
+                By Lyeneno Muyakwa, SIN: 2312378235
+        </td>
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

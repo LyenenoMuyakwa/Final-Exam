@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="stles.css">
+    <style>
+       
+        .containe {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .ha {
+            color: #00796b;
+        }
+
+        .weather-card {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #00796b;
+            border-radius: 5px;
+            background-color: #b2dfdb;
+            width: 150px;
+        }
+
+        .weather-icon {
+            width: 100px;
+            height: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="index.html" >Back to home</a>
+    <div class="containe">
+        <h1 class="ha"> Weather Forecast for the Next 4 Hours</h1>
+        <div id="weather"></div>
+    </div>
+    <script>
+ const apiKey = '9464c3a77ad1248d3a6cde776e625118';   
+const city = 'Lusaka';
+const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}`;
+
+fetch(url)
+    .then(response => response.json())
+    .then(data => {
+        const weatherContainer = document.getElementById('weather');
+        const hours = data.list.slice(0, 12); // Get weather for the next 4 hours
+        hours.forEach(hour => {
+            const weatherCard = document.createElement('div');
+            weatherCard.className = 'weather-card';
+            const iconCode = hour.weather[0].icon;
+            const iconUrl = `http://openweathermap.org/img/wn/${iconCode}@2x.png`;
+            weatherCard.innerHTML = `
+                <h2>${new Date(hour.dt_txt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</h2>
+                <img class="weather-icon" src="${iconUrl}" alt="${hour.weather[0].description}">
+                <h1> ${hour.main.temp}°C</h1>
+                 <h4> ${hour.weather[0].description}</h4>
+                <h4>Humidity: ${hour.main.humidity}%</h4>
+                <h4>Wind Speed: ${hour.wind.speed} m/s</h4>
+            `;
+            weatherContainer.appendChild(weatherCard);
+        });
+    })
+    .catch(error => console.log('Error fetching weather data:', error));
+
+
+    </script>
+</body>
+
+</html>
